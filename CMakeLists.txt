@@ -1,0 +1,8 @@
+cmake_minimum_required (VERSION 2.8)
+project(hello)
+set(CMAKE_INSTALL_PREFIX /srccode/c-project/helloworld/)
+add_executable(hello hello.c)
+install(TARGETS hello DESTINATION out)
+enable_testing()
+add_test(test_run ../out/hello)
+set_tests_properties(test_run PROPERTIES PASS_REGULAR_EXPRESSION "hello world!")
